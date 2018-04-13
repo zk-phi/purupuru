@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>yurukey</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="yurukey">
+    <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  </head>
+
+  <body class="container">
+    <div class="row">
+      <span class="key"><span class="letter">Q</span></span>
+      <span class="key"><span class="letter">W</span></span>
+      <span class="key"><span class="letter">E</span></span>
+      <span class="key"><span class="letter">R</span></span>
+      <span class="key"><span class="letter">T</span></span>
+      <span class="key"><span class="letter">Y</span></span>
+      <span class="key"><span class="letter">U</span></span>
+      <span class="key"><span class="letter">I</span></span>
+      <span class="key"><span class="letter">O</span></span>
+      <span class="key"><span class="letter">P</span></span>
+      <div class="row">
+        <span class="key"><span class="letter">A</span></span>
+        <span class="key"><span class="letter">S</span></span>
+        <span class="key"><span class="letter">D</span></span>
+        <span class="key"><span class="letter">F</span></span>
+        <span class="key"><span class="letter">G</span></span>
+        <span class="key"><span class="letter">H</span></span>
+        <span class="key"><span class="letter">J</span></span>
+        <span class="key"><span class="letter">K</span></span>
+        <span class="key"><span class="letter">L</span></span>
+        <div class="row">
+          <span class="key"><span class="letter">Z</span></span>
+          <span class="key"><span class="letter">X</span></span>
+          <span class="key"><span class="letter">C</span></span>
+          <span class="key"><span class="letter">V</span></span>
+          <span class="key"><span class="letter">B</span></span>
+          <span class="key"><span class="letter">N</span></span>
+          <span class="key"><span class="letter">M</span></span>
+        </div>
+      </div>
+    </div>
+
+    <script>$(function () { $(".key").click(function () { $(this).addClass("clicked"); }) });</script>
+  </body>
+
+</html>
+
+<style>
+.container {
+    font-family: 'Pangolin', cursive;
+    font-size: 20px;
+    padding: 100px;
+}
+.row {
+    margin-left: 44px;
+    margin-top: -70px;
+}
+.key {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    height: 110px;
+    width: 130px;
+    margin-left: -25px;
+    background-image: url(key.png);
+    background-size: contain;
+    transition: all 0.15s ease;
+}
+.key .letter {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    top: 14px;
+    left: 46px;
+    transform: rotate(50deg);
+}
+.key:hover:not(.clicked):not(:active) {
+    animation: purupuru 0.12s linear infinite;
+}
+.key:active {
+    transform: translateY(10px);
+    transition: all 0.15s ease;
+}
+.key.clicked {
+    transform: translateY(-500px);
+}
+@keyframes purupuru {
+    0% { transform: rotate(0deg) translate(0, 0); }
+    12.5% { transform: rotate(0.4deg) translate(1px, -1px); }
+    25% { transform: rotate(0.8deg) translate(0px, 1px); }
+    37.5% { transform: rotate(0.4deg) translate(-1px, 0); }
+    50% { transform: rotate(0deg) translate(0, 0); }
+    62.5% { transform: rotate(-0.4deg) translate(1px, 0); }
+    75% { transform: rotate(-0.8deg) translate(0, 1px); }
+    87.5% { transform: rotate(-0.4deg) translate(-1px, -1px); }
+    100% { transform: rotate(0deg) translate(0, 0); }
+}
+</style>
